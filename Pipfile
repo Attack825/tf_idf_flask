@@ -7,9 +7,13 @@ name = "pypi"
 flask = "~=2.2.3"
 flask-sqlalchemy = "*"
 flask-moment = "*"
-flask-bootstrap = "*"
 flask-wtf = "*"
 python-dotenv = "*"
+sklearn = "*"
+scikit-learn = "*"
+jieba = "*"
+gensim = "*"
+bootstrap-flask = "*"
 
 [dev-packages]
 

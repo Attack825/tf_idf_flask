@@ -1,9 +1,8 @@
 from flask import flash, redirect, url_for, render_template
-#
 from tf_idf import app
+from tf_idf.forms import HelloForm
 
 
-# from tf_idf.forms import HelloForm
 # from tf_idf.models import Message
 #
 #
@@ -25,4 +24,9 @@ from tf_idf import app
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    return 'Hello World!'
+    form = HelloForm()
+    if form.validate_on_submit():
+        name = form.name.data
+        body = form.body.data
+        return redirect(url_for('index'))
+    return render_template('index.html', form=form)
