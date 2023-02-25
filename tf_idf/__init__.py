@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 from flask_bootstrap import Bootstrap5
 from flask import Flask
-from flask_moment import Moment
-from flask_sqlalchemy import SQLAlchemy
+from tf_idf import views
+# from flask_moment import Moment
+# from flask_sqlalchemy import SQLAlchemy
 
 app = Flask('tf_idf')
 app.config.from_pyfile('settings.py')
@@ -14,4 +15,3 @@ bootstrap = Bootstrap5(app)
 # moment = Moment(app)
 #
 # from tf_idf import views, errors, commands
-from tf_idf import views
