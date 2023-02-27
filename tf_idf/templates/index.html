@@ -2,7 +2,18 @@
 {% from 'bootstrap/form.html' import render_form %}
 
 {% block content %}
-    <div class="hello-form">
+    <div class="case">
         {{ render_form(form, action=request.full_path) }}
+        <br>
+    </div>
+    <div class="similar_cases">
+        <p>similar_cases</p>
+        <textarea rows="25" cols="80"
+                  style="overflow:scroll;overflow-x:hidden">
+            {{ cases_list[0] }}
+            {{ cases_list[1] }}
+            {{ cases_list[2] }}
+            {{ cases_list[3] }}
+            {{ cases_list[4] }}</textarea>
     </div>
 {% endblock %}
