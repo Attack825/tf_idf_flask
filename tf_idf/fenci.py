@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+import datetime
 
 import jieba
 import re
@@ -20,7 +21,7 @@ data_lists = []
 #         data_lists.append(data_list)
 #     text_corpus = data_lists
 #     # print(text_corpus)
-
+print(datetime.datetime.now())
 # 非标准的json文件
 filename2 = 'data_20k.json'
 # time_start = datetime.now()
@@ -45,7 +46,7 @@ stopword_list = [k.strip() for k in open('stopwords', encoding='utf8').readlines
 # Lowercase each document, split it by white space and filter out stopwords
 texts = [[word for word in document.lower().split() if word not in stopword_list]
          for document in text_corpus]
-
+print(datetime.datetime.now())
 frequency = defaultdict(int)
 for text in texts:
     for token in text:
@@ -79,6 +80,7 @@ tfidf = models.TfidfModel(bow_corpus)
 # 第一个条目是 令牌 ID 和第二个条目是 tf-idf 权重。
 # print(tfidf[dictionary.doc2bow(words)])
 
+print(datetime.datetime.now())
 # 要通过 TfIdf 转换整个语料库并对其进行索引，做相似性查询的准备：
 # 并针对语料库中的每个文档查询我们的查询文档的相似性：query_document
 index = similarities.SparseMatrixSimilarity(tfidf[bow_corpus], num_features=70000)
