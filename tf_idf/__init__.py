@@ -10,3 +10,4 @@ app.jinja_env.lstrip_blocks = True
 bootstrap = Bootstrap5(app)
 
 from tf_idf import views
+
