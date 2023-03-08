@@ -1,11 +1,10 @@
 # -*- coding:utf-8 -*-
 import datetime
+import re
+from collections import defaultdict
 
 import jieba
-import re
-import pprint
 from gensim import corpora
-from collections import defaultdict
 from gensim import models
 from gensim import similarities
 
