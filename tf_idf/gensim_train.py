@@ -39,10 +39,10 @@ with open(filename2, 'r', encoding='utf8') as f:
 
 # 停用词
 # 读取停顿词列表
-stopword_list = [k.strip() for k in open('stopwords', encoding='utf8').readlines() if k.strip() != '']
+stopword_list = [k.strip() for k in open('stopwords.txt', encoding='utf8').readlines() if k.strip() != '']
 
 # print(stopword_list)
-# Lowercase each document, split it by white space and filter out stopwords
+# Lowercase each document, split it by white space and filter out stopwords.txt
 texts = [[word for word in document.lower().split() if word not in stopword_list]
          for document in text_corpus]
 print(datetime.datetime.now())
