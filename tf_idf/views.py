@@ -5,7 +5,7 @@ from flask import render_template
 
 from tf_idf import app
 from tf_idf.forms import HelloForm
-from tf_idf.sklearn_train import train_pickle_path, Classifier
+from tf_idf.sklearn_train import Classifier
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -22,5 +22,5 @@ def in_the_end(case):
     a = Classifier()
     text = re.sub(r"[^\u4e00-\u9fa5 ]+", '', case)  # 正则只匹配中文
     test_corpus = [" ".join(jieba.lcut(text))]  # 精简模式，返回一个列表类型的结果
-    cases = a.generate_test_indices(test_corpus, train_pickle_path)
+    cases = a.generate_test_indices(test_corpus)
     return a.similar_cases(cases)

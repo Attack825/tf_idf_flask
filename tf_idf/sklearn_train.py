@@ -6,7 +6,7 @@ import jieba
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 
-train_filename = 'D:\\pythonProject\\tf_idf_flask\\tf_idf\\data10.json'
+train_filename = 'D:\\pythonProject\\tf_idf_flask\\tf_idf\\data_20k.json'
 test_filename = 'D:\\pythonProject\\tf_idf_flask\\tf_idf\\data1.json'
 train_pickle_path = 'D:\\pythonProject\\tf_idf_flask\\tf_idf\\train.pickle'
 train_features_pickle_path = 'D:\\pythonProject\\tf_idf_flask\\tf_idf\\train_comment_features.pickle'
@@ -76,11 +76,11 @@ class Classifier:
 
 if __name__ == '__main__':
     a = Classifier()
-    # train_corpus = generate_corpus(train_filename)
+    train_corpus = generate_corpus(train_filename)
     test_corpus = generate_corpus(test_filename)
-    # a.generate_train_matrx(train_corpus)
+    a.generate_train_matrx(train_corpus)
     index = a.generate_test_indices(test_corpus)
-    print(a.similar_cases(index))
+    # print(a.similar_cases(index))
 # index = generate_test_indices(test_corpus, 'train.pickle')
 # print(train_corpus)  # 返回训练预料
 # print(tfidf.toarray())  # 矩阵标准化
